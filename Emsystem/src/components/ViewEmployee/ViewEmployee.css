@@ -1,0 +1,68 @@
+/* ViewEmployee.css */
+.employee-view {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 4rem);
+}
+
+.employee-view h1 {
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 0.5rem;
+}
+
+.employee-view button {
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+}
+
+.employee-view button:hover {
+  background-color: var(--primary-blue);
+  transform: translateY(-1px);
+}
+
+.employee-info {
+  background: var(--form-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.employee-info h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.employee-info p {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--input-border);
+  font-size: 1.1rem;
+}
+
+.employee-info p:last-child {
+  border-bottom: none;
+}
+
+.employee-info p::before {
+  content: attr(data-label);
+  font-weight: 600;
+  color: var(--primary-blue);
+  padding-right: 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 1rem;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .main-content {
+    margin-top: 100px; /* Adjust for taller navbar on mobile */
+  }
+}

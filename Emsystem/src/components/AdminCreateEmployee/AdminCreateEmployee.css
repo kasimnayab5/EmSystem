@@ -1,0 +1,217 @@
+/* Design System Variables */
+:root {
+  --primary-blue: #2c3e50;
+  --accent-blue: #3498db;
+  --form-bg: rgba(255, 255, 255, 0.96);
+  --input-border: #e0e0e0;
+  --success-green: #27ae60;
+  --error-red: #e74c3c;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-create-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+/* Back Button Styles */
+.transparent-back-button {
+  background: none;
+  width: fit-content;
+  border: none;
+  margin-bottom: 2px;
+  color: var(--primary-blue);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+
+.transparent-back-button:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  background: rgba(52, 152, 219, 0.05);
+  border-radius: 6px;
+}
+
+/* Form Header Positioning */
+.form-header {
+  position: relative;
+  padding-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .transparent-back-button {
+    left: 1rem;
+    top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .form-header {
+    padding-top: 2.5rem;
+  }
+}
+
+/* Responsive Design for Back Button */
+
+
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--form-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: slideIn 0.6s ease-out;
+}
+
+.form-title {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  animation: formFieldEntrance 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes formFieldEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  background: linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition);
+}
+
+button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.error-message {
+  color: var(--error-red);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.loading-dots::after {
+  content: '.';
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0%, 100% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  input,
+  select,
+  button {
+    padding: 0.8rem;
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .admin-create-container {
+    margin-top: 60px; /* Adjust margin for smaller screens */
+  }
+}
